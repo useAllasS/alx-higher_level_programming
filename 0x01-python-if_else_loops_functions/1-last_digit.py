@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-
+n = number
 # Calculate the last digit of the number
 last_digit = abs(number) % 10
-number=number
-#Generate the output string
-output = "Last digit of {} is {}".format(number, last_digit)
+
+# Generate the output string
+output = "Last digit of {} is {}".format(n, last_digit)
 
 # Check the conditions and append the appropriate string
 if last_digit > 5:
