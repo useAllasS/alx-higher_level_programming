@@ -3,7 +3,7 @@ import random
 number = random.randint(-10000, 10000)
 n = number
 # Calculate the last digit of the number
-last_digit = abs(number) % 10
+last_digit = number % 10
 
 # Generate the output string
 output = "Last digit of {} is {}".format(n, last_digit)
