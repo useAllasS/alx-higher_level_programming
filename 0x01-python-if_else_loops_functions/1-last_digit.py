@@ -1,13 +1,20 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
+
+# Calculate the last digit of the number
 last_digit = abs(number) % 10
-if number < 0:
-    last_digit = -last_digit
-print('Last digit of {} is {} and is'.format(number, last_digit), end='')
+
+# Generate the output string
+output = "The last digit of {} is {}".format(number, last_digit)
+
+# Check the conditions and append the appropriate string
 if last_digit > 5:
-    print('greater than 5')
+    output += " and is greater than 5"
 elif last_digit == 0:
-    print('0')
+    output += " and is 0"
 else:
-    print('less than 6 and not 0')
+    output += " and is less than 6 and not 0"
+
+# Print the output string
+print(output)
