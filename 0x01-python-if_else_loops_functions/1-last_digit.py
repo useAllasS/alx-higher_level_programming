@@ -6,7 +6,7 @@ number = random.randint(-10000, 10000)
 last_digit = abs(number) % 10
 
 # Generate the output string
-output = "The last digit of {} is {}".format(number, last_digit)
+output = "Last digit of {} is {}".format(number, last_digit)
 
 # Check the conditions and append the appropriate string
 if last_digit > 5:
