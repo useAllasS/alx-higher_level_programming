@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-from sys import stderr
-
 def safe_function(fct, *args):
+    import sys
     try:
-        return fct(*args)
-    except (ZeroDivisionError, IndexError, TypeError, ValueError) as e:
-        stderr.write("Exception: {}\n".format(e))
-    return None
+        ret = fct(*args)
+        return ret
+    except Exception as e:
+        print("Exception: {}".format(e), file=sys.stderr)
+        return None
