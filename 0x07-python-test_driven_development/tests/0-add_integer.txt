@@ -1,50 +1,64 @@
-===============================
- How to Use 0-add_integer.py
-===============================
+The ``add_integer`` module
+======================
 
-This library contains only one function called
+Using ``add_integer``
+-------------------
 
-``add_integer(a, b=98):``
+Import module:
 
-parameter `b` contains a default value of 98
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-Numbers:
+Test an add with only one argument:
 
-``add_integer()`` computes returns the sum of it's arguments
+    >>> add_integer(2)
+    100
 
->>> add_integer = __import__('0-add_integer').add_integer
+Test a comun sum:
 
-It works with normal numbers
+    >>> add_integer(4, 8)
+    12
 
->>> add_integer(9, 5)
-14
+Test whatever:
 
-It also worksl with floating numbers
+    >>> add_integer(24, 846)
+    870
 
->>> add_integer(9, 5.55)
-14
+Test whatever:
 
->>> add_integer(9.786, 5.868)
-14
+    >>> add_integer(24.897983479, 846.9827495)
+    870
 
-It also works with one argument
+Tes passing a string as argument:
 
->>> add_integer(2)
-100
+    >>> add_integer("Holberton", 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
 
-Strings:
+Tes passing a string as argument:
 
-``add_integer()`` doesnt't work with other type other that integers
-and floating point numbers
+    >>> add_integer(35673, "Holberton")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
 
->>> add_integer(4, "holberton") #doctest: +ELLIPSIS
-Traceback (most recent call last):
-TypeError: ... must be an integer
+Tes passing a string as argument:
 
->>> add_integer("alx")
-Traceback (most recent call last):
-TypeError: a must be an integer
+    >>> add_integer(None, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
 
->>> add_integer(["a", 3, 6], (2, 6, 9))
-Traceback (most recent call last):
-TypeError: a must be an integer
+Tes passing a string as argument:
+
+    >>> add_integer(74, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Tes passing a string as argument:
+
+    >>> add_integer(float('inf'), 5)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
